@@ -86,8 +86,6 @@ function renderPlaces(buildings) {
     distance.setAttribute("look-at", "[camera]");
     distance.setAttribute("update-distance", "");
 
-    console.dir(distance);
-
     scene.appendChild(model);
     scene.appendChild(discription);
     scene.appendChild(distance);
