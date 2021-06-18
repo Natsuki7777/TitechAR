@@ -1,4 +1,7 @@
 AFRAME.registerComponent("update-distance", {
+  init: function () {
+    console.log("init");
+  },
   update: function () {
     v3 = this.el.getAttribute("position");
     x = v3.x;
