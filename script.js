@@ -1,20 +1,22 @@
-AFRAME.registerComponent("update-distance", {
-  update: function () {
-    v3 = this.el.getAttribute("position");
+window.addEventListener("load", () => {
+  let buildings = staticLoadbuildeings();
+  renderPlaces(buildings);
+});
+
+window.addEventListener("gps-camera-update-position", (e) => {
+  console.log(e);
+  const distances = document.querySelectorAll(".distance");
+  console.dir(distances);
+  distances.forEach((distance) => {
+    v3 = distance.getAttribute("position");
     x = v3.x;
     y = v3.y;
     z = v3.z;
     dl = Math.floor(
       Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2))
     );
-    this.el.setAttribute("value", `${dl}m`);
-    console.log(v3);
-  },
-});
-
-window.addEventListener("load", () => {
-  let buildings = staticLoadbuildeings();
-  renderPlaces(buildings);
+    distance.setAttribute("value", `${dl}m`);
+  });
 });
 
 function renderPlaces(buildings) {
@@ -85,7 +87,8 @@ function renderPlaces(buildings) {
     distance.setAttribute("value", "");
     distance.setAttribute("color", "black");
     distance.setAttribute("look-at", "[camera]");
-    distance.setAttribute("update-distance", "");
+
+    console.dir(distance);
 
     scene.appendChild(model);
     scene.appendChild(discription);
