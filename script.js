@@ -26,7 +26,7 @@ function renderPlaces(buildings) {
     let building_name = building.name;
     let latitude = building.location.lat;
     let longitude = building.location.lng;
-    let building_hight = building.hight;
+    let building_height = building.height;
     let model_type = building.model_type;
     let caption = building.caption;
     let open_time = building.open_time;
@@ -38,7 +38,7 @@ function renderPlaces(buildings) {
       "gps-projected-entity-place",
       `latitude: ${latitude}; longitude: ${longitude};`
     );
-    model.setAttribute("position", { x: 0, y: building_hight, z: 0 });
+    model.setAttribute("position", { x: 0, y: building_height, z: 0 });
     model.setAttribute(
       "gltf-model",
       `./assets/model/${model_type}/${model_type}.gltf`
@@ -54,7 +54,7 @@ function renderPlaces(buildings) {
       "gps-projected-entity-place",
       `latitude: ${latitude}; longitude: ${longitude};`
     );
-    discription.setAttribute("position", { x: 10, y: building_hight, z: 0 });
+    discription.setAttribute("position", { x: 10, y: building_height, z: 0 });
     discription.setAttribute("scale", {
       x: scale,
       y: scale,
@@ -76,7 +76,7 @@ function renderPlaces(buildings) {
     distance.setAttribute("class", "distance");
     distance.setAttribute("position", {
       x: 10,
-      y: building_hight - 20,
+      y: building_height - 20,
       z: 0,
     });
     distance.setAttribute("scale", {
@@ -105,7 +105,7 @@ function staticLoadbuildeings() {
         lat: 35.60456954,
         lng: 139.68385423,
       },
-      hight: 20,
+      height: 20,
       model_type: "pin",
       caption: "",
       open_time: "",
@@ -117,7 +117,7 @@ function staticLoadbuildeings() {
         lat: 35.60618984,
         lng: 139.68464816,
       },
-      hight: 20,
+      height: 20,
       model_type: "pin",
       caption: "",
       open_time: "",
@@ -129,7 +129,7 @@ function staticLoadbuildeings() {
         lat: 35.60644499,
         lng: 139.68397225,
       },
-      hight: 20,
+      height: 20,
       model_type: "pin",
       caption: "",
       open_time: "",
@@ -141,7 +141,7 @@ function staticLoadbuildeings() {
         lat: 35.6068287769,
         lng: 139.68478654721,
       },
-      hight: 20,
+      height: 20,
       model_type: "pin",
       caption: "",
       open_time: "",
