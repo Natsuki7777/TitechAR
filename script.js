@@ -7,7 +7,7 @@ let upDateDistance = () => {
   let distances = document.querySelectorAll(".distance");
   console.log(distances);
   distances.forEach((distance) => {
-    let dm = distance.getAttribute("distanceMsg");
+    let dm = parseInt(distance.getAttribute("distance"));
     console.log(distance);
     console.log(dm);
     if (dm) {
