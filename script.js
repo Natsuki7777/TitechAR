@@ -91,7 +91,7 @@ function renderPlaces(Models) {
     distance.setAttribute("value", "");
     distance.setAttribute("color", "black");
     distance.setAttribute("look-at", "[camera]");
-    distance.addEventListener("gps-camera-update-position", (event) => {
+    distance.addEventListener("gps-entity-place-update-positon", (event) => {
       console.log(event);
       console.log(event.detail.distance);
       distance.setAttribute("value", `${event.detail.distance}}m`);
