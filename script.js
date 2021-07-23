@@ -17,7 +17,7 @@ let upDateDistance = () => {
   console.log("tick");
 };
 
-setInterval(upDateDistance, 1000);
+setInterval(upDateDistance, 5000);
 
 function renderPlaces(Models) {
   let scene = document.querySelector("a-scene");
@@ -26,7 +26,7 @@ function renderPlaces(Models) {
     let name = Model.name;
     let latitude = Model.location.latitude;
     let longitude = Model.location.longitude;
-    let height = Model.location.height;
+    let height = parseFloat(Model.location.height);
     let modelname = Model.model;
     let caption = Model.caption;
     let label = Model.label;
@@ -86,7 +86,7 @@ function renderPlaces(Models) {
     distance.setAttribute("class", "distance");
     distance.setAttribute("position", {
       x: 10,
-      y: height - 20,
+      y: height - 10,
       z: 0,
     });
     distance.setAttribute("scale", {
