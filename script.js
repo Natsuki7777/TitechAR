@@ -48,17 +48,16 @@ function renderPlaces(Models) {
       `./assets/model/${modelname}/${modelname}.gltf`
     );
     entity.setAttribute("animation-mixer", "");
-    entity.addEventListener("loaded", () => {
-      window.dispatchEvent(new CustomEvent("gps-entity-place-loaded"));
-    });
-
+    if (link) {
+      entity.setAttribute("link", `href:${link}`);
+    }
     //------------------文字--------------------------------
     let discription = document.createElement("a-text");
     discription.setAttribute(
       "gps-entity-place",
       `latitude: ${latitude}; longitude: ${longitude};`
     );
-    discription.setAttribute("position", { x: 10, y: height, z: 0 });
+    discription.setAttribute("position", { x: 0, y: height + 5, z: 0 });
     discription.setAttribute("scale", {
       x: scale,
       y: scale,
@@ -85,8 +84,8 @@ function renderPlaces(Models) {
     );
     distance.setAttribute("class", "distance");
     distance.setAttribute("position", {
-      x: 10,
-      y: height - 15,
+      x: 0,
+      y: height - 5,
       z: 0,
     });
     distance.setAttribute("scale", {
