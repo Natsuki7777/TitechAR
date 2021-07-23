@@ -121,7 +121,7 @@ function staticLoadModels() {
       maxDistance: 0,
       distance: true,
       caption: "",
-      link: "",
+      link: "https://github.com/Natsuki7777/TitechAR",
     },
     {
       id: 2,
