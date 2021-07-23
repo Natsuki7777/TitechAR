@@ -18,10 +18,11 @@ AFRAME.registerComponent("cursor-listener", {
   },
   init: function () {
     console.log(this.data.value);
-
+    var value = this.data.value;
     this.el.addEventListener("click", function (evt) {
       console.log("clicked!!!!!");
-      document.getElementById("caption").innerHTML = this.data.value;
+      console.log(value);
+      document.getElementById("caption").innerHTML = value;
     });
   },
 });
@@ -73,7 +74,7 @@ function renderPlaces(Models) {
       entity.setAttribute("link", `href:${link}`);
     }
     if (caption) {
-      entity.setAttribute("cursor-listener", `value:${caption}`);
+      entity.setAttribute("cursor-listener", { value: caption });
     }
     scene.appendChild(entity);
 
