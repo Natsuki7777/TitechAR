@@ -15,7 +15,15 @@
       vr-mode-ui="enabled: false"
       arjs="sourceType:webcam; videoTexture: true; debugUIEnabled: false;"
     >
-      <a-camera gps-camera rotation-reader><a-cursor></a-cursor></a-camera>
+      <a-camera gps-camera rotation-reader>
+        <a-entity
+          animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1500; from: 1 1 1; to: 0.1 0.1 0.1"
+          cursor="fuse: true;"
+          material="color: black; shader: flat"
+          position="0 0 -3"
+          geometry="primitive: ring"
+        ></a-entity>
+      </a-camera>
     </a-scene>
   </body>
 </html>
