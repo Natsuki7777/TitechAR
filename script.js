@@ -75,7 +75,9 @@ function renderPlaces(Models) {
     discription.setAttribute("negate", false);
     discription.setAttribute("color", "black");
     discription.setAttribute("look-at", "[camera]");
-
+    if (link) {
+      discription.setAttribute("link", `href:${link}`);
+    }
     //------------------距離--------------------------------
     let distance = document.createElement("a-text");
     distance.setAttribute(
