@@ -80,7 +80,7 @@ function renderPlaces(Models) {
     distance.setAttribute("class", "distance");
     distance.setAttribute("position", {
       x: 10,
-      y: height - 10,
+      y: height - 20,
       z: 0,
     });
     distance.setAttribute("scale", {
