@@ -1,12 +1,6 @@
 window.addEventListener("load", () => {
   let models = staticLoadModels();
   renderPlaces(models);
-  let distances = document.querySelectorAll("distance");
-  distances.forEach((distance) => {
-    distance.addEventListener("gps-camera-update-position", (event) => {
-      distance.setAttribute("value", `${event.detail.distance}}m`);
-    });
-  });
 });
 
 // window.addEventListener("gps-camera-update-position", (e) => {
@@ -97,6 +91,9 @@ function renderPlaces(Models) {
     distance.setAttribute("value", "");
     distance.setAttribute("color", "black");
     distance.setAttribute("look-at", "[camera]");
+    distance.addEventListener("gps-camera-update-position", (event) => {
+      distance.setAttribute("value", `${event.detail.distance}}m`);
+    });
 
     console.dir(distance);
 
