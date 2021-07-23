@@ -19,7 +19,7 @@ AFRAME.registerComponent("cursor-listener", {
   init: function () {
     this.el.addEventListener("click", function (evt) {
       console.log("clicked!!!!!");
-      consol.log(this.data.value);
+      console.log(this.data.value);
       document.getElementById("caption").innerHTML = this.data.value;
     });
   },
