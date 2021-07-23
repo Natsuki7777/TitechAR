@@ -111,8 +111,8 @@ function staticLoadModels() {
       id: 1,
       name: "本館",
       location: {
-        latitude: 35.61001352182725,
-        longitude: 139.67861803770478,
+        latitude: 35.61024786005314,
+        longitude: 139.67876819281398,
         height: 20,
       },
       model: "pin",
