@@ -77,7 +77,7 @@ function renderPlaces(Models) {
       entity.setAttribute("link", `href:${link}`);
     }
     if (caption) {
-      entity.setAttribute("cursor-listener", caption);
+      entity.setAttribute("cursor-listener", `value:${caption}`);
     }
     scene.appendChild(entity);
 
