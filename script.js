@@ -3,30 +3,30 @@ window.addEventListener("load", () => {
   renderPlaces(models);
 });
 
-AFRAME.registerComponent("updatedistance", {
-  schema: {},
-  update: function (olddata) {
-    let dm = this.el.getAttribute("distance");
-    console.log(dm);
-    this.el.setAttribute("value", `${dm}m`);
-  },
-});
-
-// let upDateDistance = () => {
-//   let distances = document.querySelectorAll(".distance");
-//   console.log(distances);
-//   distances.forEach((distance) => {
-//     let dm = parseInt(distance.getAttribute("distance"));
-//     console.log(distance);
+// AFRAME.registerComponent("updatedistance", {
+//   schema: {},
+//   update: function (olddata) {
+//     let dm = this.el.getAttribute("distance");
 //     console.log(dm);
-//     if (dm) {
-//       distance.setAttribute("value", `${dm}m`);
-//     }
-//   });
-//   console.log("tick");
-// };
+//     this.el.setAttribute("value", `${dm}m`);
+//   },
+// });
 
-// setInterval(upDateDistance, 5000);
+let upDateDistance = () => {
+  let distances = document.querySelectorAll(".distance");
+  console.log(distances);
+  distances.forEach((distance) => {
+    let dm = parseInt(distance.getAttribute("distance"));
+    console.log(distance);
+    console.log(dm);
+    if (dm) {
+      distance.setAttribute("value", `${dm}m`);
+    }
+  });
+  console.log("tick");
+};
+
+setInterval(upDateDistance, 5000);
 
 function renderPlaces(Models) {
   let scene = document.querySelector("a-scene");
@@ -103,7 +103,7 @@ function renderPlaces(Models) {
         `latitude: ${latitude}; longitude: ${longitude};`
       );
       distance.setAttribute("class", "distance");
-      distance.setAttribute("updatedistance", "");
+      // distance.setAttribute("updatedistance", "");
       distance.setAttribute("position", {
         x: 5,
         y: height - 8,
