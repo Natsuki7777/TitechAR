@@ -1,23 +1,29 @@
 window.addEventListener("load", () => {
   let models = staticLoadModels();
   renderPlaces(models);
-});
-
-window.addEventListener("gps-camera-update-position", (e) => {
-  console.log(e);
-  const distances = document.querySelectorAll("distance");
-  console.dir(distances);
+  let distances = document.querySelectorAll("distance");
   distances.forEach((distance) => {
-    v3 = distance.getAttribute("position");
-    x = v3.x;
-    y = v3.y;
-    z = v3.z;
-    dl = Math.floor(
-      Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2))
-    );
-    distance.setAttribute("value", `${dl}m`);
+    distance.addEventListener("gps-camera-update-position", (event) => {
+      distance.setAttribute("value", `${event.detail.distance}}m`);
+    });
   });
 });
+
+// window.addEventListener("gps-camera-update-position", (e) => {
+//   console.log(e);
+//   let distances = document.querySelectorAll("distance");
+//   console.dir(distances);
+//   distances.forEach((distance) => {
+//     v3 = distance.getAttribute("position");
+//     x = v3.x;
+//     y = v3.y;
+//     z = v3.z;
+//     dl = Math.floor(
+//       Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2))
+//     );
+//     distance.setAttribute("value", `${dl}m`);
+//   });
+// });
 
 function renderPlaces(Models) {
   let scene = document.querySelector("a-scene");
