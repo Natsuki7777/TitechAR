@@ -12,6 +12,18 @@ window.addEventListener("load", () => {
 //   },
 // });
 
+AFRAME.registerComponent("cursor-listener", {
+  schema: {
+    value: { type: "string" },
+  },
+  init: function () {
+    this.el.addEventListener("click", function (evt) {
+      consol.log(this.data.value);
+      document.getElementById("caption").innerHTML = this.data.value;
+    });
+  },
+});
+
 let upDateDistance = () => {
   let distances = document.querySelectorAll(".distance");
   console.log(distances);
@@ -61,6 +73,9 @@ function renderPlaces(Models) {
     entity.setAttribute("animation-mixer", "");
     if (link) {
       entity.setAttribute("link", `href:${link}`);
+    }
+    if (caption) {
+      entity.setAttribute("cursor-listener", caption);
     }
     scene.appendChild(entity);
 
@@ -137,7 +152,7 @@ function staticLoadModels() {
       minDistance: 0,
       maxDistance: 0,
       distance: true,
-      caption: "",
+      caption: "hello World",
       link: "",
     },
     {
@@ -149,7 +164,7 @@ function staticLoadModels() {
         height: 20,
       },
       model: "pin",
-      label: "",
+      label: true,
       minDistance: 0,
       maxDistance: 0,
       distance: true,
@@ -165,7 +180,7 @@ function staticLoadModels() {
         height: 20,
       },
       model: "pin",
-      label: "",
+      label: true,
       minDistance: 0,
       maxDistance: 0,
       distance: true,
@@ -181,7 +196,7 @@ function staticLoadModels() {
         height: 20,
       },
       model: "pin",
-      label: "",
+      label: true,
       minDistance: 0,
       maxDistance: 0,
       distance: true,
