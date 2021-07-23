@@ -64,8 +64,14 @@ function renderPlaces(Models) {
       y: scale,
       z: scale,
     });
-    discription.setAttribute("font", "./assets/font/custom-msdf.json");
-    discription.setAttribute("font-image", "./assets/font/custom.png");
+    discription.setAttribute(
+      "font",
+      "./assets/font/noto-sans-cjk-jp-msdf.json"
+    );
+    discription.setAttribute(
+      "font-image",
+      "./assets/font/noto-sans-cjk-jp-msdf.png"
+    );
     discription.setAttribute("value", name);
     discription.setAttribute("negate", false);
     discription.setAttribute("color", "black");
