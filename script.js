@@ -10,27 +10,14 @@ let upDateDistance = () => {
     let dm = distance.getAttribute("distanceMsg");
     console.log(distance);
     console.log(dm);
-    distance.setAttribute("value", `${dm}m`);
+    if (dm) {
+      distance.setAttribute("value", `${dm}m`);
+    }
   });
   console.log("tick");
 };
 
 setInterval(upDateDistance, 1000);
-// window.addEventListener("gps-camera-update-position", (e) => {
-//   console.log(e);
-//   let distances = document.querySelectorAll("distance");
-//   console.dir(distances);
-//   distances.forEach((distance) => {
-//     v3 = distance.getAttribute("position");
-//     x = v3.x;
-//     y = v3.y;
-//     z = v3.z;
-//     dl = Math.floor(
-//       Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2))
-//     );
-//     distance.setAttribute("value", `${dl}m`);
-//   });
-// });
 
 function renderPlaces(Models) {
   let scene = document.querySelector("a-scene");
@@ -93,7 +80,7 @@ function renderPlaces(Models) {
     distance.setAttribute("class", "distance");
     distance.setAttribute("position", {
       x: 10,
-      y: height - 20,
+      y: height - 10,
       z: 0,
     });
     distance.setAttribute("scale", {
