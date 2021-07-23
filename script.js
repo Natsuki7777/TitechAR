@@ -99,11 +99,9 @@ function renderPlaces(Models) {
 
     console.dir(distance);
 
-    entity.appendChild(discription);
-    entity.appendChild(distance);
     scene.appendChild(entity);
-    // scene.appendChild(discription);
-    // scene.appendChild(distance);
+    scene.appendChild(discription);
+    scene.appendChild(distance);
   });
 }
 
