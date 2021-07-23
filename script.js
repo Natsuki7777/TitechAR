@@ -28,16 +28,12 @@ AFRAME.registerComponent("cursor-listener", {
 
 let upDateDistance = () => {
   let distances = document.querySelectorAll(".distance");
-  console.log(distances);
   distances.forEach((distance) => {
     let dm = parseInt(distance.getAttribute("distance"));
-    console.log(distance);
-    console.log(dm);
     if (dm) {
       distance.setAttribute("value", `${dm}m`);
     }
   });
-  console.log("tick");
 };
 
 setInterval(upDateDistance, 5000);
