@@ -21,7 +21,7 @@ var modelRef = firebase.database().ref("/titech");
 window.addEventListener("load", () => {
   modelRef.on("value", (snapshot) => {
     const data = snapshot.val();
-    console.log(data);
+    console.dir(data);
     renderPlaces(data);
   });
 });
@@ -66,9 +66,10 @@ setInterval(upDateDistance, 5000);
 function renderPlaces(Models) {
   let scene = document.querySelector("a-scene");
   console.log(Models);
-  Models.forEach((Model) => {
+  for (const Id in Models) {
+    let Model = Models[Id];
     console.log(Model);
-    let id = Model.id;
+    let id = Id;
     let name = Model.name;
     let latitude = Model.location.latitude;
     let longitude = Model.location.longitude;
@@ -184,6 +185,7 @@ function renderPlaces(Models) {
           entity.setAttribute("cursor-listener", { value: caption });
         }
         scene.appendChild(entity);
+        console.log(entity);
       });
 
       //------------------文字--------------------------------
@@ -240,7 +242,7 @@ function renderPlaces(Models) {
         scene.appendChild(distance);
       }
     }
-  });
+  }
 }
 
 // function staticLoadModels() {
