@@ -108,7 +108,7 @@ function renderPlaces(Models) {
           "gps-entity-place",
           `latitude: ${latitude}; longitude: ${longitude};`
         );
-        discription.setAttribute("position", { x: 5, y: height + 5, z: 0 });
+        discription.setAttribute("position", { x: 0, y: height + 5, z: 0 });
         discription.setAttribute("scale", {
           x: scale,
           y: scale,
@@ -147,8 +147,8 @@ function renderPlaces(Models) {
         distance.setAttribute("class", "distance");
         // distance.setAttribute("updatedistance", "");
         distance.setAttribute("position", {
-          x: 5,
-          y: height - 8,
+          x: 0,
+          y: height - 5,
           z: 0,
         });
         distance.setAttribute("scale", {
@@ -192,7 +192,7 @@ function renderPlaces(Models) {
           "gps-entity-place",
           `latitude: ${latitude}; longitude: ${longitude};`
         );
-        discription.setAttribute("position", { x: 5, y: height + 5, z: 0 });
+        discription.setAttribute("position", { x: 0, y: height + 5, z: 0 });
         discription.setAttribute("scale", {
           x: scale,
           y: scale,
@@ -227,8 +227,8 @@ function renderPlaces(Models) {
         distance.setAttribute("class", "distance");
         // distance.setAttribute("updatedistance", "");
         distance.setAttribute("position", {
-          x: 5,
-          y: height - 8,
+          x: 0,
+          y: height - 5,
           z: 0,
         });
         distance.setAttribute("scale", {
