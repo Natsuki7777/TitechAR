@@ -15,7 +15,7 @@ firebase.initializeApp(firebaseConfig);
 var storage = firebase.app().storage("gs://socialar-9a0d4.appspot.com");
 var database = firebase.database();
 
-var modelRef = firebase.database().ref("titech");
+var modelRef = firebase.database().ref("/titech");
 modelRef.on("value", (snapshot) => {
   const data = snapshot.val();
 });
