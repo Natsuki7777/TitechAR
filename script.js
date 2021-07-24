@@ -16,14 +16,12 @@ var storage = firebase.app().storage("gs://socialar-9a0d4.appspot.com");
 var database = firebase.database();
 
 var modelRef = firebase.database().ref("/titech");
-modelRef.on("value", (snapshot) => {
-  const data = snapshot.val();
-});
 
 // -------main------------------------
 window.addEventListener("load", () => {
   modelRef.on("value", (snapshot) => {
     const data = snapshot.val();
+    console.log(data);
     renderPlaces(data);
   });
 });
@@ -100,17 +98,17 @@ function renderPlaces(Models) {
       }
       //------------------文字--------------------------------
       if (labelEnable) {
-        if (document.getElementById(`${id}discription`)) {
-          var discription = document.getElementById(`${id}discription`);
+        if (document.getElementById(`discription${id}`)) {
+          var discription = document.getElementById(`discription${id}`);
         } else {
           var discription = document.createElement("a-text");
-          discription.setAttribute("id", `${id}discription`);
+          discription.setAttribute("id", `discription${id}`);
         }
         discription.setAttribute(
           "gps-entity-place",
           `latitude: ${latitude}; longitude: ${longitude};`
         );
-        discription.setAttribute("position", { x: 5, y: height + 8, z: 0 });
+        discription.setAttribute("position", { x: 5, y: height + 5, z: 0 });
         discription.setAttribute("scale", {
           x: scale,
           y: scale,
@@ -136,11 +134,11 @@ function renderPlaces(Models) {
 
       //------------------距離--------------------------------
       if (distanceEnable) {
-        if (document.getElementById(`${id}distance`)) {
-          var distance = document.getElementById(`${id}distance`);
+        if (document.getElementById(`distance${id}`)) {
+          var distance = document.getElementById(`distance${id}`);
         } else {
           var distance = document.createElement("a-text");
-          distance.setAttribute("id", `${id}distance`);
+          distance.setAttribute("id", `distance${id}`);
         }
         distance.setAttribute(
           "gps-entity-place",
@@ -189,12 +187,12 @@ function renderPlaces(Models) {
       //------------------文字--------------------------------
       if (labelEnable) {
         let discription = document.createElement("a-text");
-        discription.setAttribute("id", `${id}discription`);
+        discription.setAttribute("id", `discription${id}`);
         discription.setAttribute(
           "gps-entity-place",
           `latitude: ${latitude}; longitude: ${longitude};`
         );
-        discription.setAttribute("position", { x: 5, y: height + 8, z: 0 });
+        discription.setAttribute("position", { x: 5, y: height + 5, z: 0 });
         discription.setAttribute("scale", {
           x: scale,
           y: scale,
@@ -221,7 +219,7 @@ function renderPlaces(Models) {
       //------------------距離--------------------------------
       if (distanceEnable) {
         let distance = document.createElement("a-text");
-        distance.setAttribute("id", `${id}distance`);
+        distance.setAttribute("id", `distance${id}`);
         distance.setAttribute(
           "gps-entity-place",
           `latitude: ${latitude}; longitude: ${longitude};`
