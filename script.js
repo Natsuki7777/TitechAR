@@ -62,6 +62,7 @@ let upDateDistance = () => {
 
 setInterval(upDateDistance, 5000);
 
+//----------render-----------------------------------------
 function renderPlaces(Models) {
   let scene = document.querySelector("a-scene");
 
@@ -108,7 +109,7 @@ function renderPlaces(Models) {
           "gps-entity-place",
           `latitude: ${latitude}; longitude: ${longitude};`
         );
-        discription.setAttribute("position", { x: 0, y: height + 5, z: 0 });
+        discription.setAttribute("position", { x: 0, y: height + 3.0, z: 0 });
         discription.setAttribute("scale", {
           x: scale,
           y: scale,
@@ -148,7 +149,7 @@ function renderPlaces(Models) {
         // distance.setAttribute("updatedistance", "");
         distance.setAttribute("position", {
           x: 0,
-          y: height - 5,
+          y: height - 3.0,
           z: 0,
         });
         distance.setAttribute("scale", {
@@ -192,7 +193,7 @@ function renderPlaces(Models) {
           "gps-entity-place",
           `latitude: ${latitude}; longitude: ${longitude};`
         );
-        discription.setAttribute("position", { x: 0, y: height + 5, z: 0 });
+        discription.setAttribute("position", { x: 0, y: height + 3.0, z: 0 });
         discription.setAttribute("scale", {
           x: scale,
           y: scale,
@@ -228,7 +229,7 @@ function renderPlaces(Models) {
         // distance.setAttribute("updatedistance", "");
         distance.setAttribute("position", {
           x: 0,
-          y: height - 5,
+          y: height - 3.0,
           z: 0,
         });
         distance.setAttribute("scale", {
