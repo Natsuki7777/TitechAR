@@ -88,7 +88,7 @@ function renderPlaces(Models) {
       //------------------3Dオブジェクト--------------------------------
       let entity = document.getElementById(id);
       entity.setAttribute(
-        "gps-entity-place",
+        "gps-projected-entity-place",
         `latitude: ${latitude}; longitude: ${longitude};`
       );
       entity.setAttribute("position", { x: 0, y: height, z: 0 });
@@ -108,7 +108,7 @@ function renderPlaces(Models) {
           discription.setAttribute("id", `discription${id}`);
         }
         discription.setAttribute(
-          "gps-entity-place",
+          "gps-projected-entity-place",
           `latitude: ${latitude}; longitude: ${longitude};`
         );
         discription.setAttribute("position", { x: 5, y: height + 5.0, z: 0 });
@@ -144,7 +144,7 @@ function renderPlaces(Models) {
           distance.setAttribute("id", `distance${id}`);
         }
         distance.setAttribute(
-          "gps-entity-place",
+          "gps-projected-entity-place",
           `latitude: ${latitude}; longitude: ${longitude};`
         );
         distance.setAttribute("class", "distance");
@@ -171,7 +171,7 @@ function renderPlaces(Models) {
         let entity = document.createElement("a-entity");
         entity.setAttribute("id", id);
         entity.setAttribute(
-          "gps-entity-place",
+          "gps-projected-entity-place",
           `latitude: ${latitude}; longitude: ${longitude};`
         );
         entity.setAttribute("position", { x: 0, y: height, z: 0 });
@@ -193,7 +193,7 @@ function renderPlaces(Models) {
         let discription = document.createElement("a-text");
         discription.setAttribute("id", `discription${id}`);
         discription.setAttribute(
-          "gps-entity-place",
+          "gps-projected-entity-place",
           `latitude: ${latitude}; longitude: ${longitude};`
         );
         discription.setAttribute("position", { x: 5, y: height + 5.0, z: 0 });
@@ -225,7 +225,7 @@ function renderPlaces(Models) {
         let distance = document.createElement("a-text");
         distance.setAttribute("id", `distance${id}`);
         distance.setAttribute(
-          "gps-entity-place",
+          "gps-projected-entity-place",
           `latitude: ${latitude}; longitude: ${longitude};`
         );
         distance.setAttribute("class", "distance");
